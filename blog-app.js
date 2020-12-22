@@ -1,5 +1,5 @@
 
-// SLIDER
+//  SLIDER
 
 const sliderBtn = document.getElementById("slider-btns");
 const sliderImgs = document.getElementById("slider-imgs");
@@ -10,7 +10,7 @@ let slideCounter = 0 ;
 function slideShow(e){
   if (e.target.parentElement.id == 'navigation-right'|| e.target.parentElement.id == 'navigation-left' ){
     for (let i = 0 ; i < sliderImgs.children.length ; i++){
-      sliderImgs.children[i].style.width = "0px" ;
+      sliderImgs.children[i].style.flex = "0"; 
     }
 
     if (e.target.parentElement.id == "navigation-right"){
@@ -19,9 +19,9 @@ function slideShow(e){
       }else {
         slideCounter += 1 ;
       }
-      sliderImgs.children[slideCounter].style.width = "33.333%"
-      sliderImgs.children[slideCounter+1].style.width = "33.333%"
-      sliderImgs.children[slideCounter+2].style.width = "33.333%"
+      sliderImgs.children[slideCounter].style.flex = "1";
+      sliderImgs.children[slideCounter+1].style.flex = "1";
+      sliderImgs.children[slideCounter+2].style.flex = "1";
     } 
     else if (e.target.parentElement.id == "navigation-left"){
       if(slideCounter == 0){
@@ -29,9 +29,9 @@ function slideShow(e){
       }else {
         slideCounter -= 1 ;
       }
-      sliderImgs.children[slideCounter].style.width = "33.333%"
-      sliderImgs.children[slideCounter+1].style.width = "33.333%"
-      sliderImgs.children[slideCounter+2].style.width = "33.333%"
+      sliderImgs.children[slideCounter].style.flex = "1";
+      sliderImgs.children[slideCounter+1].style.flex = "1";
+      sliderImgs.children[slideCounter+2].style.flex = "1";
     }
 
   }
@@ -46,7 +46,7 @@ suggestions.addEventListener ('click' , showSuggestionList)
 function showSuggestionList(e) {
   
   if(suggestionList.style.top == "-30%") {
-    suggestionList.style = "top : 80px"
+    suggestionList.style = "top : 77px"
   } else {
     suggestionList.style = "top : -30%"
   }
